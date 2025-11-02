@@ -1,1 +1,17 @@
-<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Nền tròn xanh navy -->
+  <circle cx="100" cy="100" r="90" fill="#0D2C54" />
+
+  <!-- Chữ T trắng cách điệu kiểu web hiện đại -->
+  <path d="
+    M65 95
+    Q80 60, 110 65
+    H135
+    V95
+    H110
+    V140
+    H85
+    V95
+    Q70 95, 65 95
+    Z" fill="white" />
+</svg>

@@ -1,66 +1,82 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import { useState, useEffect } from "react";
+import dynamic from "next/dynamic";
+
+// 🧠 Lazy load từng trang — chỉ tải khi cần
+const Home = dynamic(() => import("../pages/Home"), { ssr: false });
+const Articles = dynamic(() => import("../pages/Articles"), { ssr: false });
+const ArticleDetail = dynamic(() => import("../pages/ArticleDetail"), { ssr: false });
+const GioiThieu = dynamic(() => import("../pages/GioiThieu"), { ssr: false });
+const LienHe = dynamic(() => import("../pages/LienHe"), { ssr: false });
+const CategoryPage = dynamic(() => import("../pages/CategoryPage"), { ssr: false });
+const TinTuc = dynamic(() => import("../pages/TinTuc"), { ssr: false });
+const TinTucDetail = dynamic(() => import("../pages/TinTucDetail"), { ssr: false });
+const SearchPage = dynamic(() => import("../pages/SearchPage"), { ssr: false });
+const SearchResults = dynamic(() => import("../pages/SearchResults"), { ssr: false });
+const ChinhSachBaoMat = dynamic(() => import("../pages/ChinhSachBaoMat"), { ssr: false });
+const ChinhSachCookie = dynamic(() => import("../pages/ChinhSachCookie"), { ssr: false });
+
+// 🗺️ Định nghĩa route tĩnh
+const routes = {
+  "/": <Home />,
+  "/bai-viet": <Articles />,
+  "/bai-viet/chi-tiet": <ArticleDetail />,
+  "/gioi-thieu": <GioiThieu />,
+  "/lien-he": <LienHe />,
+  "/chuyen-muc": <CategoryPage />,
+  "/tin-tuc": <TinTuc />,
+  "/tin-tuc/chi-tiet": <TinTucDetail />,
+  "/tim-kiem": <SearchPage />,
+  "/tim-kiem-ket-qua": <SearchResults />,
+  "/chinh-sach-bao-mat": <ChinhSachBaoMat />,
+  "/chinh-sach-cookie": <ChinhSachCookie />,
+};
+
+export default function Page() {
+  const [path, setPath] = useState("/");
+  const [slug, setSlug] = useState("");
+
+  useEffect(() => {
+    const onPopState = () => handlePath(window.location.pathname);
+    window.addEventListener("popstate", onPopState);
+    handlePath(window.location.pathname);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, []);
+
+  const handlePath = (pathname) => {
+    setPath(pathname);
+
+    // ✅ Nếu là bài viết chi tiết kiểu /bai-viet/[slug]
+    if (pathname.startsWith("/bai-viet/") && pathname.split("/").length > 2) {
+      const slugPart = pathname.replace("/bai-viet/", "");
+      setSlug(slugPart);
+    } else {
+      setSlug("");
+    }
+  };
+
+  const handleNavigate = (newPath) => {
+    window.history.pushState({}, "", newPath);
+    handlePath(newPath);
+  };
+
+  let PageComponent = routes[path];
+
+  // ✅ Nếu là bài viết động → hiển thị ArticleDetail
+  if (!PageComponent && path.startsWith("/bai-viet/") && slug) {
+    PageComponent = <ArticleDetail params={{ slug }} />;
+  }
+
+  // ✅ Nếu không có route hợp lệ → về trang chủ
+  if (!PageComponent) {
+    PageComponent = <Home />;
+  }
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div>
+      {/* ⚡ Hiển thị nội dung */}
+      <div className="animate-fadeIn">{PageComponent}</div>
     </div>
   );
 }

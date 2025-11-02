@@ -1,0 +1,162 @@
+"use client";
+
+import { useParams, notFound } from "next/navigation";
+import { useMemo } from "react";
+import Link from "next/link";
+import Head from "next/head";
+import articles from "@/data/articles";
+
+export default function CategoryPage() {
+  const { slug } = useParams(); // Lấy slug từ URL, ví dụ: "meo-cong-nghe"
+
+  // Đổi slug dạng "meo-cong-nghe" → "Mẹo công nghệ"
+  const categoryName = useMemo(() => {
+    if (!slug) return "";
+    return decodeURIComponent(slug.replace(/-/g, " "));
+  }, [slug]);
+
+  // Lọc bài viết theo category
+  const filteredArticles = useMemo(() => {
+    return articles.filter(
+      (a) => a.category?.toLowerCase() === categoryName.toLowerCase()
+    );
+  }, [categoryName]);
+
+  if (!categoryName) notFound();
+
+  return (
+    <div style={{ maxWidth: "960px", margin: "0 auto", padding: "1rem" }}>
+      {/* SEO Head */}
+      <Head>
+        <title>{`Chuyên mục: ${categoryName} | Tech Tips`}</title>
+        <meta
+          name="description"
+          content={`Tổng hợp bài viết thuộc chuyên mục ${categoryName} – cập nhật mới nhất về công nghệ, AI, bảo mật, lập trình và hơn thế nữa.`}
+        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={`Chuyên mục: ${categoryName}`} />
+        <meta
+          property="og:description"
+          content={`Khám phá các bài viết hấp dẫn trong chuyên mục ${categoryName}.`}
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="vi_VN" />
+      </Head>
+
+      {/* Tiêu đề chuyên mục */}
+      <h1
+        style={{
+          fontSize: "1.8rem",
+          fontWeight: 700,
+          color: "#fff",
+          marginTop: "0.5rem",
+          marginBottom: "1.5rem",
+        }}
+      >
+        <span
+          style={{ color: "#9ca3af", fontWeight: 500, marginRight: "0.5rem" }}
+        >
+          Chuyên mục:
+        </span>
+        <span style={{ color: "#38bdf8" }}>{categoryName}</span>
+      </h1>
+
+      <div
+        style={{
+          width: "80px",
+          height: "3px",
+          background: "linear-gradient(90deg, #38bdf8, #0ea5e9)",
+          borderRadius: "3px",
+          marginBottom: "1.5rem",
+        }}
+      ></div>
+
+      {/* Danh sách bài viết */}
+      {filteredArticles.length === 0 ? (
+        <p style={{ color: "#aaa" }}>Không có bài viết nào trong chuyên mục này.</p>
+      ) : (
+        <div style={{ display: "grid", gap: "16px" }}>
+          {filteredArticles.map((article, index) => (
+            <div
+              key={`${article.slug}-${index}`}
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "flex-start",
+                justifyContent: "flex-start",
+                gap: "16px",
+                borderBottom: "1px solid rgba(255,255,255,0.1)",
+                paddingBottom: "16px",
+                marginBottom: "16px",
+              }}
+            >
+              {(article.image || article.cover) && (
+                <Link href={`/bai-viet/${article.slug}`}>
+                  <img
+                    src={article.image || article.cover}
+                    alt={article.title}
+                    style={{
+                      width: "120px",
+                      height: "80px",
+                      objectFit: "cover",
+                      borderRadius: "6px",
+                      flexShrink: 0,
+                    }}
+                  />
+                </Link>
+              )}
+
+              <div style={{ flex: 1 }}>
+                <Link
+                  href={`/bai-viet/${article.slug}`}
+                  style={{
+                    color: "#4fc3f7",
+                    fontWeight: 600,
+                    textDecoration: "none",
+                    fontSize: "1rem",
+                    lineHeight: 1.4,
+                    marginBottom: "4px",
+                    display: "block",
+                  }}
+                >
+                  {article.title}
+                </Link>
+
+                <p
+                  style={{
+                    color: "#ccc",
+                    fontSize: "0.9rem",
+                    lineHeight: 1.6,
+                    marginTop: "4px",
+                    marginBottom: "2px",
+                    display: "-webkit-box",
+                    WebkitLineClamp: 3,
+                    WebkitBoxOrient: "vertical",
+                    overflow: "hidden",
+                  }}
+                >
+                  {article.excerpt}
+                </p>
+
+                {article.author && (
+                  <p
+                    style={{
+                      color: "#888",
+                      fontSize: "0.75rem",
+                      marginTop: "6px",
+                    }}
+                  >
+                    {article.author} —{" "}
+                    {article.date
+                      ? new Date(article.date).toLocaleDateString("vi-VN")
+                      : "Cập nhật gần đây"}
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
