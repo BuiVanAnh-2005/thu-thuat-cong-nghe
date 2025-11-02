@@ -7,7 +7,10 @@ import articles from "@/data/articles";
 import { useParams } from "next/navigation";
 
 export default function CategoryPage() {
-  const { categorySlug } = useParams();
+  const params = useParams();
+if (!params) return null; // build sẽ skip render, không crash
+const { categorySlug } = params;
+
   const categoryName = categorySlug?.replace(/-/g, " ") ?? "";
 
   const filtered = useMemo(() => {
@@ -16,7 +19,8 @@ export default function CategoryPage() {
     );
   }, [categoryName]);
 
-  if (!categoryName) notFound();
+  if (!categoryName) return <p>Chuyên mục không tồn tại.</p>;
+
 
   return (
     <div style={{ maxWidth: "960px", margin: "0 auto", padding: "1rem" }}>

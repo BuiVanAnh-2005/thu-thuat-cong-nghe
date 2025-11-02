@@ -3,21 +3,22 @@
 import { useMemo, useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Head from "next/head";
- // ⚠️ nhớ import đúng đường dẫn data
+import news from "@/data/TinTuc"; // đường dẫn đúng theo dự án của bạn
 
 export default function TinTuc() {
+  // Nếu dữ liệu rỗng, trả về thông báo ngay
+  if (!news || news.length === 0) {
+    return <p style={{ padding: "1rem" }}>Chưa có dữ liệu tin tức.</p>;
+  }
+
   const [visibleCount, setVisibleCount] = useState(6);
   const loadMoreRef = useRef(null);
 
   // --- Hero news ---
-  const heroNews = useMemo(() => {
-    if (!news || news.length === 0) return null;
-    return news.find((n) => n.featured) || news[0];
-  }, []);
+  const heroNews = useMemo(() => news.find((n) => n.featured) || news[0], []);
 
   // --- Other news ---
   const otherNews = useMemo(() => {
-    if (!heroNews) return [];
     return news.filter((n) => n !== heroNews).slice(0, visibleCount);
   }, [heroNews, visibleCount]);
 
@@ -32,12 +33,13 @@ export default function TinTuc() {
       { threshold: 1.0 }
     );
 
-    if (loadMoreRef.current) observer.observe(loadMoreRef.current);
-    return () => observer.disconnect();
-  }, []);
+    const current = loadMoreRef.current;
+    if (current) observer.observe(current);
 
-  if (!news || news.length === 0)
-    return <p style={{ padding: "1rem" }}>Chưa có dữ liệu tin tức.</p>;
+    return () => {
+      if (current) observer.unobserve(current);
+    };
+  }, []);
 
   return (
     <div
@@ -60,76 +62,75 @@ export default function TinTuc() {
         Tin tức công nghệ mới nhất
       </h1>
       <p style={{ color: "#AAA", marginBottom: "1.5rem" }}>
-        Cập nhật nhanh xu hướng, sản phẩm và sự kiện nổi bật trong thế giới công nghệ.
+        Cập nhật nhanh xu hướng, sản phẩm và sự kiện nổi bật trong thế giới
+        công nghệ.
       </p>
 
       {/* Hero section */}
-      {heroNews && (
-        <div
-          style={{
-            background: "#1a1a1a",
-            borderRadius: "12px",
-            overflow: "hidden",
-            marginBottom: "2.5rem",
-            transition: "transform 0.25s ease",
-          }}
+      <div
+        style={{
+          background: "#1a1a1a",
+          borderRadius: "12px",
+          overflow: "hidden",
+          marginBottom: "2.5rem",
+          transition: "transform 0.25s ease",
+        }}
+      >
+        <Link
+          href={`/tin-tuc/${heroNews.slug}`}
+          style={{ textDecoration: "none", color: "inherit" }}
         >
-          <Link
-            href={`/tin-tuc/${heroNews.slug}`}
-            style={{ textDecoration: "none", color: "inherit" }}
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              paddingTop: "56.25%",
+              borderRadius: "10px",
+            }}
           >
-            <div
+            <img
+              src={heroNews.cover}
+              alt={heroNews.title}
               style={{
-                position: "relative",
+                position: "absolute",
+                top: 0,
+                left: 0,
                 width: "100%",
-                paddingTop: "56.25%",
-                borderRadius: "10px",
+                height: "100%",
+                objectFit: "cover",
+              }}
+              loading="lazy"
+            />
+          </div>
+
+          <div style={{ padding: "1.5rem" }}>
+            <h2
+              style={{
+                fontSize: "1.8rem",
+                fontWeight: 700,
+                marginBottom: "0.5rem",
               }}
             >
-              <img
-                src={heroNews.cover}
-                alt={heroNews.title}
-                style={{
-                  position: "absolute",
-                  top: 0,
-                  left: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-                loading="lazy"
-              />
-            </div>
+              {heroNews.title}
+            </h2>
+            <p
+              style={{
+                color: "#CCC",
+                fontSize: "1rem",
+                lineHeight: 1.6,
+                marginBottom: "0.5rem",
+              }}
+            >
+              {heroNews.excerpt}
+            </p>
+            <p style={{ color: "#888", fontSize: "0.9rem" }}>
+              {heroNews.date} — {heroNews.category}
+            </p>
+          </div>
+        </Link>
+      </div>
 
-            <div style={{ padding: "1.5rem" }}>
-              <h2
-                style={{
-                  fontSize: "1.8rem",
-                  fontWeight: 700,
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {heroNews.title}
-              </h2>
-              <p
-                style={{
-                  color: "#CCC",
-                  fontSize: "1rem",
-                  lineHeight: 1.6,
-                  marginBottom: "0.5rem",
-                }}
-              >
-                {heroNews.excerpt}
-              </p>
-              <p style={{ color: "#888", fontSize: "0.9rem" }}>
-                {heroNews.date} — {heroNews.category}
-              </p>
-            </div>
-          </Link>
-        </div>
-      )}
-
-      {/* Danh sách tin kiểu ảnh trái - chữ phải */}
+      {/* Danh sách tin */}
       <div style={{ display: "flex", flexDirection: "column", gap: "28px" }}>
         {otherNews.map((n) => (
           <div
@@ -163,12 +164,8 @@ export default function TinTuc() {
                   borderRadius: "8px",
                   transition: "transform 0.3s ease",
                 }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.05)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "none")
-                }
+                onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = "none")}
               />
             </Link>
 
@@ -213,6 +210,7 @@ export default function TinTuc() {
         ))}
       </div>
 
+      {/* Ref cho infinite scroll */}
       <div ref={loadMoreRef} style={{ height: "40px" }}></div>
     </div>
   );

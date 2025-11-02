@@ -1,41 +1,30 @@
-"use client";
+"use client"; // bắt buộc
 
-import { useEffect, useMemo } from "react";
+import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import Head from "next/head";
- // ⚠️ Nhớ sửa đúng đường dẫn
+import tinTuc from "@/data/TinTuc"; // ⚠️ chắc chắn import đúng
 
 export default function TinTucDetail({ params }) {
+  if (!params || !params.slug) return <p>Đang tải...</p>;
   const { slug } = params;
-  const article = useMemo(
-    () => tinTuc.find((a) => a.slug === slug),
-    [slug]
-  );
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [slug]);
+  // ✅ Tìm bài viết
+  const article = tinTuc.find(a => a.slug === slug);
 
-  if (!article) {
-    return (
-      <div style={{ padding: "1rem", textAlign: "center" }}>
-        <h2>❌ Tin tức không tồn tại</h2>
-        <Link href="/tin-tuc" style={{ color: "blue" }}>
-          ← Quay lại danh sách
-        </Link>
-      </div>
-    );
-  }
+  // ❌ Nếu không có → 404
+  if (!article) return notFound();
 
+  // Bài viết liên quan
   const related = tinTuc.filter(
-    (a) =>
+    a =>
       a.id !== article.id &&
-      (a.tags || []).some((tag) => (article.tags || []).includes(tag))
+      (a.tags || []).some(tag => (article.tags || []).includes(tag))
   );
 
   return (
-    <div style={{ padding: "1rem", maxWidth: "800px", margin: "0 auto" }}>
+    <div style={{ padding: "1rem", maxWidth: "800px", margin: "0 auto", color: "#EAEAEA" }}>
       <Head>
         <title>{article.title} | Tin tức công nghệ</title>
         <meta
@@ -49,20 +38,11 @@ export default function TinTucDetail({ params }) {
       </Head>
 
       {/* 📰 Tiêu đề */}
-      <h1
-        style={{
-          fontSize: "1.8rem",
-          fontWeight: 700,
-          marginBottom: "0.5rem",
-          lineHeight: 1.3,
-          color: "#FFFFFF",
-        }}
-      >
+      <h1 style={{ fontSize: "1.8rem", fontWeight: 700, marginBottom: "0.5rem" }}>
         {article.title}
       </h1>
       <p style={{ color: "#CCCCCC", fontSize: "0.9rem", marginBottom: "1rem" }}>
-        {article.date} — Tags:{" "}
-        {Array.isArray(article.tags) ? article.tags.join(", ") : ""}
+        {article.date} — Tags: {Array.isArray(article.tags) ? article.tags.join(", ") : ""}
       </p>
 
       {/* 🖼 Hero (16:9) */}
@@ -98,7 +78,6 @@ export default function TinTucDetail({ params }) {
         style={{
           lineHeight: "1.7",
           fontSize: "1rem",
-          color: "#FFFFFF",
           marginBottom: "2rem",
         }}
       >
@@ -130,7 +109,7 @@ export default function TinTucDetail({ params }) {
               gap: "16px",
             }}
           >
-            {related.slice(0, 4).map((r) => (
+            {related.slice(0, 4).map(r => (
               <div
                 key={r.id}
                 style={{
@@ -171,7 +150,6 @@ export default function TinTucDetail({ params }) {
                     </div>
                   </Link>
                 )}
-
                 <div style={{ flex: 1 }}>
                   <Link
                     href={`/tin-tuc/${r.slug}`}
@@ -187,7 +165,6 @@ export default function TinTucDetail({ params }) {
                   >
                     {r.title}
                   </Link>
-
                   <p
                     style={{
                       color: "#999",
@@ -202,10 +179,8 @@ export default function TinTucDetail({ params }) {
                   >
                     {r.excerpt}
                   </p>
-
                   <p style={{ color: "#888", fontSize: "0.8rem" }}>
-                    {r.date} — Tags:{" "}
-                    {Array.isArray(r.tags) ? r.tags.join(", ") : ""}
+                    {r.date} — Tags: {Array.isArray(r.tags) ? r.tags.join(", ") : ""}
                   </p>
                 </div>
               </div>
