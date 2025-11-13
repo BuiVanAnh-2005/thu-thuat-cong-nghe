@@ -1,29 +1,31 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.techtips.icu',     // 🔹 Domain chính (không có dấu / ở cuối)
-  generateRobotsTxt: true,                 // 🔹 Tự tạo file robots.txt
-  generateIndexSitemap: true,              // 🔹 Tạo sitemap tổng hợp
-  sitemapSize: 500,                        // 🔹 Mỗi file con chứa 500 URL (tốt cho >1000 bài)
-  changefreq: 'weekly',                    // 🔹 Gợi ý Google thu thập hàng tuần
-  priority: 0.8,                           // 🔹 Ưu tiên crawl trung bình cao
-  exclude: ['/404', '/admin', '/draft/*'], // 🔹 Loại trừ trang không cần index
-  autoLastmod: true,                       // 🔹 Tự thêm thẻ <lastmod> (Google rất thích)
+  siteUrl: 'https://www.techtips.icu', // 🌐 Domain chính (không có dấu / ở cuối)
+  generateRobotsTxt: true,              // ✅ Tự tạo file robots.txt
+  generateIndexSitemap: true,           // ✅ Tạo sitemap tổng hợp
+  sitemapSize: 1000,                    // ✅ Mỗi file chứa 1000 URL (phù hợp site lớn)
+  changefreq: 'daily',                  // ✅ Gợi ý Google crawl hàng ngày
+  priority: 0.8,                        // ✅ Mức ưu tiên trung bình cao
+  exclude: ['/404', '/admin', '/draft/*'], // 🚫 Loại bỏ trang không cần index
+  autoLastmod: true,                    // ✅ Tự thêm ngày cập nhật cuối cùng
+
+  // ✅ Tùy chỉnh từng URL
   transform: async (config, path) => {
-    // 🔹 Cho phép tùy chỉnh thông tin từng URL
     return {
       loc: path,
-      changefreq: 'weekly',
-      priority: path === '/' ? 1.0 : 0.8, // Trang chủ ưu tiên cao hơn
+      changefreq: 'daily',
+      priority: path === '/' ? 1.0 : 0.8, // Trang chủ ưu tiên cao nhất
       lastmod: new Date().toISOString(),
     };
   },
+
+  // ✅ Cấu hình robots.txt
   robotsTxtOptions: {
     policies: [
-      { userAgent: '*', allow: '/' },     // Cho phép mọi bot truy cập
-      { userAgent: 'GPTBot', disallow: ['/'] }, // (tuỳ chọn) chặn bot AI nếu muốn
+      { userAgent: '*', allow: '/' }, // Cho phép mọi bot truy cập
     ],
     additionalSitemaps: [
-      'https://www.techtips.icu/sitemap.xml', // Sitemap tổng
+      'https://www.techtips.icu/sitemap-index.xml', // ✅ Sitemap tổng chính xác
     ],
   },
 };
