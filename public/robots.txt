@@ -7,4 +7,3 @@ Host: https://www.techtips.icu
 
 # Sitemaps
 Sitemap: https://www.techtips.icu/sitemap.xml
-Sitemap: https://www.techtips.icu/sitemap-index.xml

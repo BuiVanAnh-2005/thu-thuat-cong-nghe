@@ -1,31 +1,49 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.techtips.icu', // 🌐 Domain chính (không có dấu / ở cuối)
-  generateRobotsTxt: true,              // ✅ Tự tạo file robots.txt
-  generateIndexSitemap: true,           // ✅ Tạo sitemap tổng hợp
-  sitemapSize: 1000,                    // ✅ Mỗi file chứa 1000 URL (phù hợp site lớn)
-  changefreq: 'daily',                  // ✅ Gợi ý Google crawl hàng ngày
-  priority: 0.8,                        // ✅ Mức ưu tiên trung bình cao
-  exclude: ['/404', '/admin', '/draft/*'], // 🚫 Loại bỏ trang không cần index
-  autoLastmod: true,                    // ✅ Tự thêm ngày cập nhật cuối cùng
+  siteUrl: "https://www.techtips.icu",
+  generateRobotsTxt: true,
+  autoLastmod: true,
+  changefreq: "daily",
+  priority: 0.8,
 
-  // ✅ Tùy chỉnh từng URL
-  transform: async (config, path) => {
-    return {
-      loc: path,
-      changefreq: 'daily',
-      priority: path === '/' ? 1.0 : 0.8, // Trang chủ ưu tiên cao nhất
-      lastmod: new Date().toISOString(),
-    };
-  },
+  sitemapSize: 10000, // Chuẩn Google
 
-  // ✅ Cấu hình robots.txt
+  generateIndexSitemap: true, // sitemap.xml trở thành index sitemap
+
+  // Loại bỏ các page rác / trùng
+  exclude: [
+    "/404",
+    "/admin",
+    "/draft/*",
+
+    // Các URL không hoạt động hoặc trùng
+    "/ArticleDetail",
+    "/CategoryPage",
+    "/GioiThieu",
+    "/ChinhSachBaoMat",
+    "/Home",
+    "/LienHe",
+    "/SearchPage",
+    "/SearchResults",
+    "/TinTuc",
+    "/TinTucDetail"
+  ],
+
+  // Tự động sinh lastmod hiện tại
+  transform: async (_, path) => ({
+    loc: path,
+    changefreq: "daily",
+    priority: path === "/" ? 1.0 : 0.8,
+    lastmod: new Date().toISOString(),
+  }),
+
+  // Robots.txt chuẩn SEO
   robotsTxtOptions: {
     policies: [
-      { userAgent: '*', allow: '/' }, // Cho phép mọi bot truy cập
-    ],
-    additionalSitemaps: [
-      'https://www.techtips.icu/sitemap-index.xml', // ✅ Sitemap tổng chính xác
+      {
+        userAgent: "*",
+        allow: "/",
+      },
     ],
   },
 };
