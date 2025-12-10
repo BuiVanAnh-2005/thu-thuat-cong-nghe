@@ -13,6 +13,14 @@ import phanMem from "./phanMem/index.js";
 import phanCung from "./phanCung/index.js";
 import xeCongNghe from "./xeCongNghe/index.js";
 import khamPha from "./khamPha/index.js";
+import dauTuThiTruong from "./dauTuThiTruong/index.js";
+import nganHangSo from "./nganHangSo/index.js";
+import fintechStartup from "./fintechStartup/index.js";
+import aiTrongTaiChinh from "./aiTrongTaiChinh/index.js";
+import anNinhBaoMat from "./anNinhBaoMat/index.js";
+import congNgheThanhToan from "./congNgheThanhToan/index.js";
+import xuHuongDuBao from "./xuHuongDuBao/index.js";
+import huongDanTips from "./huongDanTips/index.js";
 
 
 
@@ -29,6 +37,15 @@ const articles = [
   ...phanCung,
   ...xeCongNghe,
   ...khamPha,
+  // --- Tài chính Công nghệ ---
+  ...dauTuThiTruong,
+  ...nganHangSo,
+  ...fintechStartup,
+  ...aiTrongTaiChinh,
+  ...anNinhBaoMat,
+  ...congNgheThanhToan,
+  ...xuHuongDuBao,
+  ...huongDanTips,
   
 ];
 

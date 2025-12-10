@@ -17,6 +17,13 @@ import {
   Star,          // Đánh giá
   Watch,         // Thiết bị đeo
   Globe,         // Tin tức Công nghệ
+  TrendingUp,
+  CreditCard,
+  Zap,
+  Cpu,
+  ShieldCheck,
+  BarChart2,
+  BookOpen,
   Info,          // Giới thiệu
   Mail,          // Liên hệ
   Cookie         // Hướng dẫn Cookie
@@ -259,6 +266,127 @@ export default function NavLinks({ onClose }) {
           margin: "12px 0",
         }}
       />
+      
+      {/* Nhãn “Chuyên mục Tài Chính Công Nghệ” */}
+<li
+  style={{
+    fontSize: "11px",
+    fontWeight: 600,
+    color: "#6B7280",
+    textTransform: "uppercase",
+    letterSpacing: "0.08em",
+    padding: "6px 0 4px",
+    userSelect: "none",
+    cursor: "default",
+  }}
+>
+CÔNG NGHỆ TÀI CHÍNH 
+</li>
+
+{/* 1. Đầu tư & Thị trường */}
+<li>
+    <Link
+        href="/chuyen-muc/Đầu tư thị trường"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/Đầu tư thị trường")}
+    >
+        <TrendingUp size={20} />
+        Đầu tư & Thị trường
+    </Link>
+</li>
+{/* 2. Ngân hàng số & Ví điện tử */}
+<li>
+    <Link
+        href="/chuyen-muc/ngan-hang-so"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/ngan-hang-so")}
+    >
+        <CreditCard size={20} />
+        Ngân hàng số & Ví điện tử
+    </Link>
+</li>
+
+{/* 3. FinTech & Startup */}
+<li>
+    <Link
+        href="/chuyen-muc/fintech-startup"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/fintech-startup")}
+    >
+        <Zap size={20} />
+        FinTech & Startup
+    </Link>
+</li>
+
+{/* 4. AI & Công nghệ trong tài chính */}
+<li>
+    <Link
+        href="/chuyen-muc/ai-trong-tai-chinh"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/ai-trong-tai-chinh")}
+    >
+        <Cpu size={20} />
+        AI & Công nghệ trong Tài chính
+    </Link>
+</li>
+
+{/* 5. An ninh & Bảo mật Tài chính */}
+<li>
+    <Link
+        href="/chuyen-muc/an-ninh-bao-mat"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("chuyen-muc/an-ninh-bao-mat")}
+    >
+        <ShieldCheck size={20} />
+        An ninh & Bảo mật Tài chính
+    </Link>
+</li>
+
+{/* 6. Công nghệ thanh toán & Blockchain */}
+<li>
+    <Link
+        href="/chuyen-muc/cong-nghe-thanh-toan"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/cong-nghe-thanh-toan")}
+    >
+        <HardDrive size={20} />
+        Công nghệ thanh toán & Blockchain
+    </Link>
+</li>
+
+{/* 7. Xu hướng & Dự báo Tài chính Công nghệ */}
+<li>
+    <Link
+        href="/chuyen-muc/xu-huong-du-bao"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/xu-huong-du-bao")}
+    >
+        <BarChart2 size={20} />
+        Xu hướng & Dự báo
+    </Link>
+</li>
+
+{/* 8. Hướng dẫn & Tips tài chính số */}
+<li>
+    <Link
+        href="/chuyen-muc/huong-dan-tips"
+        onClick={() => onClose && onClose()}
+        style={linkStyle("/chuyen-muc/huong-dan-tips")}
+    >
+        <BookOpen size={20} />
+        Hướng dẫn & Tips
+    </Link>
+</li>
+{/* Đường kẻ chia nhóm */}
+      <hr
+        style={{
+          border: "none",
+          borderTop: "1px solid #e5e7eb",
+          margin: "12px 0",
+        }}
+      />
+
+
 
       {/* Giới thiệu + Liên hệ */}
       <li>
@@ -301,7 +429,13 @@ export default function NavLinks({ onClose }) {
           <Cookie size={20} />
           Hướng dẫn Cookie
         </Link>
+       
+       
+
       </li>
+     
+       
+
 
     </ul>
   );

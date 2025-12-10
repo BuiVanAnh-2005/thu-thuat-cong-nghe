@@ -8,10 +8,15 @@
     justify-content: space-between;
   }
 
-  /* Ẩn nút 3 gạch */
+ 
+ /* Desktop >= 768px: hiển thị hamburger bên phải */
+@media (min-width: 768px) {
   header button {
-    display: none;
+    display: block;       /* hiện nút 3 gạch */
+    order: 2;             /* đưa ra bên phải nếu dùng flex */
   }
+}
+
 
   /* Hiện menu ngang */
   header nav {
