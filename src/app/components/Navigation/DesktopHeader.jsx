@@ -33,7 +33,7 @@ export default function DesktopHeader({
         onClick={() => console.log("Open menu")}
         style={{
           fontSize: "26px",
-          marginLeft: "auto",
+          marginRight: "0px",
           background: "none",
           border: "none",
           color: "#fff",
@@ -63,7 +63,6 @@ export default function DesktopHeader({
         onClick={() => setShowSearch(!showSearch)}
         style={{
           fontSize: "20px",
-          
           color: "#fff",
           background: "none",
           border: "none",
