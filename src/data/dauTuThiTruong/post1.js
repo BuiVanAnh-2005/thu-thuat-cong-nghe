@@ -757,7 +757,7 @@ Hãy chủ động cập nhật, phân bổ tài sản hợp lý và theo dõi c
   "title": "Chiến Lược DCA 2026–2030: Tối Ưu Lợi Nhuận Trong Thời AI, Lãi Suất Cao & Biến Động Thị Trường",
   "slug": "chien-luoc-dca-2026-2030",
   "excerpt": "Phân tích chiến lược DCA trong giai đoạn 2026–2030, thời kỳ của AI, token hóa và thị trường nhiều biến động. Hướng dẫn tối ưu hóa danh mục bằng DCA thế hệ mới.",
-  "cover": "https://images.pexels.com/photos/35132183/pexels-photo-35132183.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "cover": "https://images.pexels.com/photos/259234/pexels-photo-259234.jpeg?auto=compress&cs=tinysrgb&w=1200",
   "content": `
 # Chiến Lược DCA 2026–2030: Tối Ưu Lợi Nhuận Trong Thời AI, Lãi Suất Cao & Biến Động Thị Trường
 
