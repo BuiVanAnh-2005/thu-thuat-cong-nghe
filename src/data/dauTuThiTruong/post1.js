@@ -1226,7 +1226,202 @@ mà là người **không tự loại mình khỏi cuộc chơi**.
   "category": "Đầu tư thị trường",
   "tags": ["tâm lý đầu tư", "kỷ luật tài chính", "đầu tư dài hạn", "fintech", "AI"],
   "date": "2025-12-03"
-}
+},
+{
+  "id": 13008,
+  "title": "Lộ Trình Xây Dựng Danh Mục Đầu Tư Từ 0 Đến 10 Năm (2026–2035): Dành Cho Nhà Đầu Tư Cá Nhân",
+  "slug": "lo-trinh-xay-dung-danh-muc-dau-tu-10-nam",
+  "excerpt": "Hướng dẫn chi tiết lộ trình xây dựng danh mục đầu tư từ con số 0 đến 10 năm, phù hợp bối cảnh 2026–2035 với AI, fintech, ETF và tài sản số.",
+  "cover": "https://images.pexels.com/photos/590011/pexels-photo-590011.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "content": `
+# Lộ Trình Xây Dựng Danh Mục Đầu Tư Từ 0 Đến 10 Năm (2026–2035)
+
+Rất nhiều người bắt đầu đầu tư với câu hỏi:  
+**“Tôi nên mua gì bây giờ?”**
+
+Nhưng câu hỏi đúng hơn phải là:  
+**“Tôi đang ở giai đoạn nào trong hành trình đầu tư?”**
+
+Bài viết này xây dựng **lộ trình đầu tư 10 năm**, phù hợp cho nhà đầu tư cá nhân giai đoạn 2026–2035 — nơi AI, fintech và tài sản số trở thành một phần tất yếu của thị trường.
+
+---
+
+## 1. Nguyên tắc cốt lõi trước khi bắt đầu
+
+Trước khi đi vào từng giai đoạn, cần thống nhất 4 nguyên tắc:
+
+- Đầu tư là quá trình, không phải sự kiện
+- Bảo toàn vốn quan trọng hơn lợi nhuận sớm
+- Danh mục phải tiến hóa theo thời gian
+- Không có danh mục “hoàn hảo”, chỉ có danh mục “phù hợp”
+
+---
+
+## 2. Giai đoạn 1: Năm 0–1 | Xây nền tài chính
+
+### Mục tiêu:
+- Không thua lỗ lớn
+- Hình thành thói quen đầu tư
+- Học cách kiểm soát cảm xúc
+
+### Phân bổ gợi ý:
+- 40% tiền mặt & quỹ dự phòng  
+- 40% ETF thị trường rộng  
+- 10% ETF trái phiếu  
+- 10% tài sản tăng trưởng (AI/fintech)
+
+### Chiến lược:
+- DCA hàng tháng
+- Không giao dịch ngắn hạn
+- Không dùng đòn bẩy
+
+---
+
+## 3. Giai đoạn 2: Năm 1–3 | Tăng trưởng có kiểm soát
+
+### Mục tiêu:
+- Tăng tài sản đều đặn
+- Hiểu chu kỳ thị trường
+- Tối ưu danh mục ban đầu
+
+### Phân bổ gợi ý:
+- 50% ETF cổ phiếu
+- 20% AI & fintech
+- 10% năng lượng xanh
+- 10% trái phiếu
+- 10% tài sản số nền tảng
+
+### Chiến lược:
+- Rebalancing mỗi 6–12 tháng
+- Không chạy theo sóng ngắn
+- Bắt đầu ghi chép nhật ký đầu tư
+
+---
+
+## 4. Giai đoạn 3: Năm 3–5 | Đa dạng hóa & tối ưu rủi ro
+
+### Mục tiêu:
+- Bảo vệ thành quả
+- Giảm biến động danh mục
+- Tăng hiệu suất dài hạn
+
+### Phân bổ gợi ý:
+- 40% ETF toàn cầu
+- 20% cổ phiếu tăng trưởng
+- 15% trái phiếu & thu nhập cố định
+- 15% tài sản số & token hóa
+- 10% vàng & hàng hóa
+
+### Chiến lược:
+- Ưu tiên ổn định
+- Giảm giao dịch cảm tính
+- Không tăng rủi ro chỉ vì lợi nhuận tốt
+
+---
+
+## 5. Giai đoạn 4: Năm 5–7 | Tối ưu lợi nhuận bền vững
+
+### Mục tiêu:
+- Tăng trưởng ổn định
+- Giữ lợi nhuận đã đạt
+- Chuẩn bị cho chu kỳ suy giảm
+
+### Phân bổ gợi ý:
+- 35% ETF cổ phiếu
+- 25% ETF cổ tức & thu nhập
+- 20% AI, fintech, công nghệ lõi
+- 10% tài sản phòng thủ
+- 10% tài sản số
+
+### Chiến lược:
+- Ưu tiên chất lượng hơn số lượng
+- Giảm tài sản rủi ro cao
+- Không FOMO xu hướng mới
+
+---
+
+## 6. Giai đoạn 5: Năm 7–10 | Bảo toàn & tái cấu trúc
+
+### Mục tiêu:
+- Bảo toàn tài sản
+- Chuẩn bị cho mục tiêu tài chính lớn
+- Giảm biến động danh mục
+
+### Phân bổ gợi ý:
+- 40% tài sản thu nhập ổn định
+- 25% ETF cổ phiếu chất lượng
+- 15% vàng & phòng thủ
+- 10% AI & fintech
+- 10% tiền mặt linh hoạt
+
+### Chiến lược:
+- Rebalancing nghiêm ngặt
+- Ưu tiên dòng tiền
+- Không theo đuổi lợi nhuận cao bằng mọi giá
+
+---
+
+## 7. Những sai lầm phổ biến cần tránh
+
+- Thay đổi chiến lược quá sớm
+- So sánh danh mục với người khác
+- Dồn vốn vào một tài sản
+- Đầu tư khi chưa có quỹ dự phòng
+- Bỏ cuộc giữa chừng
+
+---
+
+## 8. Vai trò của AI & fintech trong lộ trình 10 năm
+
+AI giúp:
+- Phân tích dữ liệu
+- Dự báo rủi ro
+- Tối ưu phân bổ
+
+Fintech giúp:
+- Tự động DCA
+- Rebalancing định kỳ
+- Giảm chi phí đầu tư
+
+Nhưng:
+> Công cụ chỉ hỗ trợ, kỷ luật mới quyết định kết quả.
+
+---
+
+## 9. Đầu tư 10 năm là cuộc chơi của sự kiên nhẫn
+
+Không phải ai cũng giàu sau 10 năm.  
+Nhưng **gần như không ai nghèo đi nếu đầu tư đúng và đủ lâu**.
+
+Thành công không đến từ:
+- Một quyết định đúng
+- Một thương vụ thắng lớn
+
+Mà đến từ:
+- Hàng trăm quyết định nhỏ đúng liên tiếp
+
+---
+
+## 10. Kết luận
+
+Lộ trình đầu tư 10 năm không giúp bạn làm giàu nhanh.  
+Nó giúp bạn **không phá hủy tương lai tài chính của chính mình**.
+
+Trong giai đoạn 2026–2035, người chiến thắng sẽ là người:
+- Có kế hoạch rõ ràng
+- Biết mình đang ở đâu
+- Không bỏ cuộc giữa đường
+
+Đầu tư không cần hoàn hảo.  
+Chỉ cần **đi đúng hướng và đủ lâu**.
+
+---
+`,
+  "category": "Đầu tư thị trường",
+  "tags": ["lộ trình đầu tư", "danh mục đầu tư", "đầu tư dài hạn", "fintech", "AI"],
+  "date": "2025-12-03"
+},
+
 
 
 
