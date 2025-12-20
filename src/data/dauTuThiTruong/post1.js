@@ -1605,6 +1605,173 @@ bạn đã chiến thắng phần lớn cuộc chơi.
   "tags": ["nhà đầu tư cá nhân", "đầu tư dài hạn", "fintech", "AI", "ETF"],
   "date": "2025-12-03"
 },
+{
+  "id": 13010,
+  "title": "Quản Trị Rủi Ro Danh Mục Đầu Tư 2026–2035: Cách Sống Sót Qua Mọi Chu Kỳ Thị Trường",
+  "slug": "quan-tri-rui-ro-danh-muc-dau-tu-2026-2035",
+  "excerpt": "Hướng dẫn toàn diện về quản trị rủi ro danh mục đầu tư giai đoạn 2026–2035, giúp nhà đầu tư cá nhân bảo vệ vốn và tăng trưởng bền vững trong mọi chu kỳ.",
+  "cover": "https://images.pexels.com/photos/7869097/pexels-photo-7869097.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  "content": `
+# Quản Trị Rủi Ro Danh Mục Đầu Tư 2026–2035: Cách Sống Sót Qua Mọi Chu Kỳ Thị Trường
+
+Trong đầu tư dài hạn, **lợi nhuận là phần thưởng**, còn **quản trị rủi ro là điều kiện để được ở lại cuộc chơi**.
+
+Giai đoạn 2026–2035 sẽ chứng kiến:
+- Chu kỳ kinh tế ngắn hơn  
+- Biến động mạnh hơn  
+- Tin tức lan truyền nhanh hơn AI có thể xử lý  
+
+Nếu không có hệ thống quản trị rủi ro, **mọi chiến lược đầu tư đều có thể sụp đổ**.
+
+---
+
+## 1. Hiểu đúng về rủi ro trong đầu tư
+
+Rủi ro không chỉ là:
+- Giá giảm
+- Thua lỗ tạm thời
+
+Rủi ro thực sự là:
+- Mất khả năng phục hồi
+- Bị loại khỏi thị trường
+- Không còn vốn để tiếp tục đầu tư
+
+Nhà đầu tư thua không phải vì thị trường xấu,  
+mà vì **không chịu được thị trường xấu**.
+
+---
+
+## 2. Các loại rủi ro chính giai đoạn 2026–2035
+
+### 🔹 Rủi ro thị trường
+- Suy thoái kinh tế
+- Khủng hoảng tài chính
+- Bong bóng tài sản
+
+### 🔹 Rủi ro công nghệ
+- AI sai lệch dữ liệu
+- Lỗi hệ thống fintech
+- Công nghệ mới thay thế công nghệ cũ
+
+### 🔹 Rủi ro pháp lý
+- Thay đổi chính sách
+- Quy định mới với tài sản số
+- Kiểm soát dòng vốn
+
+### 🔹 Rủi ro cá nhân
+- Quyết định cảm xúc
+- Đòn bẩy quá mức
+- Thiếu kỷ luật
+
+---
+
+## 3. Nguyên tắc quản trị rủi ro cốt lõi
+
+- Không đặt cược toàn bộ vào một tài sản
+- Luôn giả định kịch bản xấu nhất
+- Ưu tiên tồn tại hơn lợi nhuận cao
+- Đa dạng hóa nhưng không dàn trải
+
+> Mục tiêu số 1: **Không bị loại khỏi cuộc chơi**.
+
+---
+
+## 4. Phân bổ tài sản – lớp phòng thủ đầu tiên
+
+Danh mục bền vững cần:
+- Tài sản tăng trưởng (ETF, cổ phiếu, AI)
+- Tài sản ổn định (trái phiếu, cổ tức)
+- Tài sản phòng thủ (vàng, hàng hóa)
+- Thanh khoản (tiền mặt)
+
+Không có tỷ lệ hoàn hảo —  
+chỉ có tỷ lệ **phù hợp với khả năng chịu rủi ro**.
+
+---
+
+## 5. Rebalancing – vũ khí bị đánh giá thấp
+
+Rebalancing giúp:
+- Chốt lời tự động
+- Giảm rủi ro lệch danh mục
+- Kỷ luật hóa quyết định đầu tư
+
+Nguyên tắc:
+- Theo lịch (6–12 tháng)
+- Không theo cảm xúc
+- Không vì “tin nóng”
+
+---
+
+## 6. Quản trị rủi ro với tài sản số & AI
+
+Với tài sản số:
+- Giới hạn tỷ trọng
+- Không dùng đòn bẩy
+- Chỉ đầu tư phần có thể chấp nhận mất
+
+Với AI:
+- Dùng làm công cụ hỗ trợ
+- Không giao quyền quyết định hoàn toàn
+- Luôn có phương án dự phòng
+
+---
+
+## 7. Khi nào nên giảm rủi ro danh mục?
+
+- Danh mục tăng quá nhanh trong thời gian ngắn
+- Biến động thị trường tăng mạnh
+- Mục tiêu tài chính sắp đến gần
+- Tâm lý không còn thoải mái
+
+Giảm rủi ro **không phải là bỏ cuộc**,  
+mà là **bảo vệ thành quả**.
+
+---
+
+## 8. Những sai lầm phổ biến khiến danh mục sụp đổ
+
+- Dồn vốn vào một xu hướng
+- Tăng đòn bẩy khi đang lãi
+- Không có kế hoạch thoát
+- Tin rằng “lần này sẽ khác”
+
+Lịch sử thị trường luôn lặp lại,  
+chỉ có hình thức là thay đổi.
+
+---
+
+## 9. Quản trị rủi ro là quá trình liên tục
+
+Không có:
+- Danh mục an toàn mãi mãi
+- Chiến lược bất bại
+
+Chỉ có:
+- Danh mục được cập nhật
+- Chiến lược được điều chỉnh
+- Nhà đầu tư biết thích nghi
+
+---
+
+## 10. Kết luận
+
+Trong giai đoạn 2026–2035:
+- Người kiếm được nhiều tiền sẽ xuất hiện
+- Nhưng người **giữ được tiền** mới đi xa
+
+Quản trị rủi ro không làm bạn giàu nhanh,  
+nhưng nó **cho bạn cơ hội giàu lâu**.
+
+Nếu bạn còn vốn, còn kỷ luật và còn thời gian —  
+bạn vẫn còn trong cuộc chơi.
+
+---
+`,
+  "category": "Đầu tư thị trường",
+  "tags": ["quản trị rủi ro", "danh mục đầu tư", "đầu tư dài hạn", "fintech", "AI"],
+  "date": "2025-12-03"
+},
 
 
 
