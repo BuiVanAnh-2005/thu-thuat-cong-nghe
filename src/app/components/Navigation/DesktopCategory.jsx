@@ -19,18 +19,16 @@ export default function DesktopCategory({ scrolled }) {
         gap: "30px",
       }}
     >
-      <Link href="/cong-nghe" style={{ color: "#fff", fontSize: "15px" }}>
-        Trang chủ
+      <Link href="/" style={{ color: "#fff", fontSize: "15px" }}>
+        Trang chủ 
       </Link>
-      <Link href="/mobile" style={{ color: "#fff", fontSize: "15px" }}>
+      <Link href="/" style={{ color: "#fff", fontSize: "15px" }}>
         CÔNG NGHỆ
       </Link>
       <Link href="/thu-thuat" style={{ color: "#fff", fontSize: "15px" }}>
         CÔNG NGHỆ TÀI CHÍNH
       </Link>
-      <Link href="/pc-laptop" style={{ color: "#fff", fontSize: "15px" }}>
-        PC / Laptop
-      </Link>
+      
     </div>
   );
 }
