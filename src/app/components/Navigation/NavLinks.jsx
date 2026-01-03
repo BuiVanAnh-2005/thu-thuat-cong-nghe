@@ -297,9 +297,9 @@ CÔNG NGHỆ TÀI CHÍNH
 {/* 2. Ngân hàng số & Ví điện tử */}
 <li>
     <Link
-        href="/chuyen-muc/ngan-hang-so"
+        href="/chuyen-muc/Ngân hàng số"
         onClick={() => onClose && onClose()}
-        style={linkStyle("/chuyen-muc/ngan-hang-so")}
+        style={linkStyle("/chuyen-muc/Ngân hàng số")}
     >
         <CreditCard size={20} />
         Ngân hàng số & Ví điện tử
